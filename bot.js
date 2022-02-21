@@ -99,7 +99,8 @@ let Bot = function(client,prefix){
     });
     
     
-    client.on("message", async msg => {
+    client.on("messageCreate", async msg => {
+        //console.log(`message recieved: ${msg.content}`);
         let str = msg.content.trim();
         if(str.slice(0,that.prefix.length) === that.prefix){//if equal to prefix
             str = str.slice(that.prefix.length).trim();
